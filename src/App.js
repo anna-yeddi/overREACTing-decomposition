@@ -1,139 +1,95 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
+import Logo from './components/Logo'
+import Tabs from './components/Tabs'
+import List from './components/List'
+import Stocks from './components/Stocks'
+import HeadingLink from './components/HeadingLink'
+import ProjectAd from './components/ProjectAd'
+import SearchBar from './components/SearchBar'
+import AdBanner from './components/AdBanner'
+import WeatherWidget from './components/WeatherWidget'
 
 /**
  * Global container of the page
  */
 function App() {
+  const fakeNews = [
+    { icon: 'campaign', title: 'Cows lose their jobs as milk prices drop' },
+    {
+      icon: 'campaign',
+      title: 'Forecasters call for weather on Monday',
+    },
+    { icon: 'bug_report', title: 'Miracle cure kills fifth patient' },
+    { icon: 'cancel', title: 'Thursday is cancelled' },
+    { icon: 'campaign', title: 'Breathing oxygen linked to staying alive' },
+  ]
+
   return (
     <div className="container-fluid p-3" style={{ width: '95%' }}>
       <div className="row">
-        <div className="col-md align-self-center text-right mb-5">
-          <h1 className="mr-3">
-            <span className="text-info">L</span>ogogo
-          </h1>
+        <div className="col-md align-self-center text-right mb-5 pb-5">
+          <Logo />
         </div>
         <div className="col-md-10 px-0">
           <div className="row">
-            <div className="col-7 bg-light border border-secondary px-0 mr-5">
-              <div className="row" role="tablist" aria-label="News Groups">
-                <h2
-                  className="col-3 text-info"
-                  role="tab"
-                  id="news-tab-00"
-                  aria-controls="news-tabpanel-00">
-                  Breaking News
-                </h2>
-                <h2
-                  className="col-3 text-primary"
-                  role="tab"
-                  aria-controls="news-tabpanel-01">
-                  Local News
-                </h2>
-                <h2
-                  className="col-3 text-primary"
-                  role="tab"
-                  aria-controls="news-tabpanel-02">
-                  Recommended
-                </h2>
-                <div className="col-3 text-secondary">Date & Time</div>
-              </div>
-              <div
-                className="bg-light border border-info mx-0 pr-5"
-                role="tabpanel"
-                aria-selected="true"
-                aria-labelledby="news-tab-00"
-                id="news-tabpanel-00">
-                <ul className="ml-n5 pl-5">
-                  <li className="d-block">
-                    Farmer using cannon to protect watermelonsCows lose their
-                    jobs as milk prices drop
-                  </li>
-                  <li className="d-block">
-                    Man Accused of Killing Lawyer Receives a New Attorney
-                  </li>
-                  <li className="d-block">Miracle cure kills fifth patient</li>
-                  <li className="d-block">Thursday is cancelled</li>
-                  <li className="d-block">
-                    Breathing oxygen linked to staying alive
-                  </li>
-                </ul>
-              </div>
-              <div className="border border-muted mr-n5">
-                <div className="row">
-                  <div className="col">USD</div>
-                  <div className="col">EUR</div>
-                  <div className="col">Oil</div>
-                  <div className="col-1 text-secondary">...</div>
-                </div>
+            <div className="col-7 px-0 mr-5">
+              <Tabs fakeNews={fakeNews}>
+                <div className="text-secondary mb-0 pt-3">Date & Time</div>
+              </Tabs>
+              <div className="border border-muted mr-0">
+                <Stocks>
+                  <div className="col-1 text-secondary">
+                    <button>...</button>
+                  </div>
+                </Stocks>
               </div>
             </div>
-            <div
-              className="col-4 bg-light border border-secondary
-             align-self-end pr-0 ml-3 mb-2">
-              <div>Project Ad Image</div>
-              <h2 className="text-info">Title</h2>
-              <div>Description</div>
-            </div>
+            <ProjectAd />
           </div>
           <div className="row">
             <div className="col px-0 mt-3">
-              <div
-                className="bg-light border border-secondary text-info"
-                style={{ width: '70%' }}>
-                Links
-              </div>
-              <div
-                className="border border-success"
-                style={{ width: '90%' }}
-                role="search">
-                <input type="text" name="search" className="search-input" />
-                <button className="btn btn-info" style={{ width: '10%' }}>
-                  Search
-                </button>
-              </div>
-              <div className="w-50 bg-light border border-secondary">
-                Example
-              </div>
-              <div
-                className="bg-info border border-secondary my-3"
-                style={{ width: '80%' }}>
-                Banner
-              </div>
+              <SearchBar />
+              <AdBanner />
             </div>
           </div>
           <div className="row">
             <div className="col-4 px-0">
-              <h2 className="text-info pt-2">Weather</h2>
-              <div className="row">
-                <div className="col">+17</div>
-                <div className="col">Forecast</div>
-              </div>
-              <h2 className="text-info pt-2">Popular</h2>
-              <ul className="pl-0">
-                <li className="d-block">1</li>
-                <li className="d-block">2</li>
-                <li className="d-block">3</li>
-              </ul>
+              <WeatherWidget />
+              <HeadingLink url="#">Popular</HeadingLink>
+              <List
+                arr={fakeNews.slice(1, 4)}
+                classUL="list-unstyled"
+                showIcons={false}
+              />
             </div>
             <div className="col-4 px-0">
-              <h2 className="text-info pt-2">Local Map</h2>
+              <HeadingLink url="#">Local Map</HeadingLink>
               <p>Public transport schedule</p>
-              <h2 className="text-info pt-2">TV Guide</h2>
-              <ul className="pl-0">
-                <li className="d-block">1</li>
-                <li className="d-block">2</li>
-                <li className="d-block">3</li>
-              </ul>
+              <div className="row">
+                <div className="col pt-2">
+                  <HeadingLink url="#">TV Guide</HeadingLink>
+                </div>
+                <div className="col">
+                  <button className="badge badge-info btn-sm">
+                    Watch Live
+                  </button>
+                </div>
+              </div>
+              <List
+                arr={fakeNews.slice(2)}
+                classUL="list-unstyled"
+                showIcons={false}
+              />
             </div>
             <div className="col-4 px-0">
-              <h2 className="text-info pt-2">Live TV</h2>
-              <ul className="pl-0">
-                <li className="d-block">1</li>
-                <li className="d-block">2</li>
-                <li className="d-block">3</li>
-              </ul>
+              <HeadingLink url="#">Now Streaming</HeadingLink>
+              <List
+                arr={fakeNews.slice(0, 3)}
+                classUL="ml-n2 list-unstyled"
+                showIcons={true}
+              />
             </div>
           </div>
         </div>
