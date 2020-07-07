@@ -11,7 +11,7 @@
 
 body {
   font: 16px/24px 'Lato', Arial, sans-serif;
-  text-align: center;
+  /* text-align: center; */
 }
 
 @media screen and (prefers-reduced-motion: reduce), (update: slow) {
@@ -37,7 +37,7 @@ body {
 
 /* Local Styles */
 
-.container {
+/* .container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,4 +49,14 @@ body {
   font-weight: bold;
   text-align: center;
   letter-spacing: 1px;
+} */
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.search-input {
+  width: 80%;
+  border: thick solid #17a2b8;
 }
