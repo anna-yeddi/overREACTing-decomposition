@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="container-fluid p-3" style={{ width: '95%' }}>
       <div className="row">
-        <div className="col-md align-self-center text-right">
+        <div className="col-md align-self-center text-right mb-5">
           <h1 className="mr-3">
             <span className="text-info">L</span>ogogo
           </h1>
@@ -17,19 +17,47 @@ function App() {
         <div className="col-md-10 px-0">
           <div className="row">
             <div className="col-7 bg-light border border-secondary px-0 mr-5">
-              <div className="row">
-                <h2 className="col-3 text-info">Breaking News</h2>
-                <h2 className="col-3 text-primary">Local News</h2>
-                <h2 className="col-3 text-primary">Recommended</h2>
+              <div className="row" role="tablist" aria-label="News Groups">
+                <h2
+                  className="col-3 text-info"
+                  role="tab"
+                  id="news-tab-00"
+                  aria-controls="news-tabpanel-00">
+                  Breaking News
+                </h2>
+                <h2
+                  className="col-3 text-primary"
+                  role="tab"
+                  aria-controls="news-tabpanel-01">
+                  Local News
+                </h2>
+                <h2
+                  className="col-3 text-primary"
+                  role="tab"
+                  aria-controls="news-tabpanel-02">
+                  Recommended
+                </h2>
                 <div className="col-3 text-secondary">Date & Time</div>
               </div>
-              <div className="bg-light border border-info mx-0 pr-5">
+              <div
+                className="bg-light border border-info mx-0 pr-5"
+                role="tabpanel"
+                aria-selected="true"
+                aria-labelledby="news-tab-00"
+                id="news-tabpanel-00">
                 <ul className="ml-n5 pl-5">
-                  <li className="d-block">News</li>
-                  <li className="d-block">News</li>
-                  <li className="d-block">News</li>
-                  <li className="d-block">News</li>
-                  <li className="d-block">News</li>
+                  <li className="d-block">
+                    Farmer using cannon to protect watermelonsCows lose their
+                    jobs as milk prices drop
+                  </li>
+                  <li className="d-block">
+                    Man Accused of Killing Lawyer Receives a New Attorney
+                  </li>
+                  <li className="d-block">Miracle cure kills fifth patient</li>
+                  <li className="d-block">Thursday is cancelled</li>
+                  <li className="d-block">
+                    Breathing oxygen linked to staying alive
+                  </li>
                 </ul>
               </div>
               <div className="border border-muted mr-n5">
@@ -50,7 +78,7 @@ function App() {
             </div>
           </div>
           <div className="row">
-            <div className="col px-0">
+            <div className="col px-0 mt-3">
               <div
                 className="bg-light border border-secondary text-info"
                 style={{ width: '70%' }}>
