@@ -5,16 +5,18 @@ import SearchLinks from './SearchLinks'
 
 function SearchBar(props) {
   return (
-    <>
-      <SearchLinks />
-      <div style={{ width: '90%' }} role="search">
-        <input type="text" name="search" className="search-input" />
-        <button className="btn btn-info" style={{ width: '10%' }}>
-          Search
-        </button>
+    <div className="row">
+      <div className="col px-0 mt-3">
+        <SearchLinks />
+        <div style={{ width: '90%' }} role="search">
+          <input type="text" name="search" className="search-input" />
+          <button className="btn btn-info" style={{ width: '10%' }}>
+            Search
+          </button>
+        </div>
+        <SearchExample example="Lorem ipsum dolor." />
       </div>
-      <SearchExample example="Lorem ipsum dolor." />
-    </>
+    </div>
   )
 }
 
