@@ -1,9 +1,22 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import SearchExample from './SearchExample'
 import SearchLinks from './SearchLinks'
 
-function SearchBar(props) {
+/**
+ * Renders a <SearchBar /> component
+ * that contains <SearchLinks /> and <SearchExample /> components
+ *
+ * @global
+ * @component
+ *
+ * @todo When filling the content, ensure temporary
+ *       styling and example text data
+ *       is removed or updated.
+ *
+ * This component does not receive any props.
+ */
+function SearchBar() {
   return (
     <div className="row">
       <div className="col px-0 mt-3">
@@ -20,6 +33,6 @@ function SearchBar(props) {
   )
 }
 
-SearchBar.propTypes = {}
+// SearchBar.propTypes = {}
 
 export default SearchBar

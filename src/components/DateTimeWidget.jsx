@@ -1,7 +1,16 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
-function DateTimeWidget(props) {
+/**
+ * Renders a <DateTimeWidget /> component
+ * that outputs localized user's date and time
+ *
+ * @global component
+ * @component
+ *
+ * This component does not receive any props.
+ */
+function DateTimeWidget() {
   const now = new Date(),
     options = {
       day: 'numeric',
@@ -20,6 +29,6 @@ function DateTimeWidget(props) {
   )
 }
 
-DateTimeWidget.propTypes = {}
+// DateTimeWidget.propTypes = {}
 
 export default DateTimeWidget

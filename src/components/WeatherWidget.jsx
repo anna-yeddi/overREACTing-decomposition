@@ -2,6 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import HeadingLink from './HeadingLink'
 
+/**
+ * Renders a <WeatherWidget /> component
+ * that includes user's geolocation and a weather forecast
+ *
+ * @memberof <Widgets /> component
+ * @global
+ * @component
+ * @requires react-geolocated
+ * @see https://www.npmjs.com/package/react-geolocated
+ *
+ * @todo Ensure react-geolocated is installed
+ * as well as other related dependencies
+ */
 function WeatherWidget(props) {
   return (
     <>
@@ -27,6 +40,17 @@ function WeatherWidget(props) {
   )
 }
 
-WeatherWidget.propTypes = {}
+WeatherWidget.propTypes = {
+  /** @param {Object{}} props Data set for providing the weather forecast */
+  props: PropTypes.objectOf({
+    /** @param {Object} coords User's coordinates */
+    coords: PropTypes.objectOf({
+      /** @param  {string} coords.latitude Latitude from react-geolocated */
+      latitude: PropTypes.string.isRequired,
+      /** @param  {string} coords.longitude Longitude from react-geolocated */
+      longitude: PropTypes.string.isRequired,
+    }),
+  }),
+}
 
 export default WeatherWidget

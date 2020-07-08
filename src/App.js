@@ -9,7 +9,7 @@ import Widgets from './components/Widgets'
 import WidgetsNews from './components/WidgetsNews'
 
 /**
- * Global container of the page
+ * Renders an <App /> component that contains entire layout
  */
 function App() {
   const fakeNews = [
@@ -30,7 +30,7 @@ function App() {
     <div className="container-fluid p-3" style={{ width: '95%' }}>
       <div className="row">
         <div className="col-md align-self-center text-right mb-5 pb-5">
-          <Logo />
+          <Logo url="/" />
         </div>
         <div className="col-md-10 px-0">
           <WidgetsNews data={fakeNews}>

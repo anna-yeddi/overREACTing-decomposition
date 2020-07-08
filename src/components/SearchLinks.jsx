@@ -1,7 +1,20 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
-function SearchLinks(props) {
+/**
+ * Renders a <SearchLinks/> component
+ * placed within the <SearchBar /> components
+ *
+ * @global
+ * @component
+ *
+ * @todo When filling the content, ensure temporary
+ *       styling and code to create URL from the link text
+ *       is removed or updated.
+ *
+ * This component does not receive any props.
+ */
+function SearchLinks() {
   const categories = [
     'Lorem',
     'Ipsum',
@@ -26,6 +39,6 @@ function SearchLinks(props) {
   )
 }
 
-SearchLinks.propTypes = {}
+// SearchLinks.propTypes = {}
 
 export default SearchLinks
